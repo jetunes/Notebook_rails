@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Adrresses</h1>
+<h1><%= "#{t('messages.listing')} #{@adrresses.model.model_name.human(count: @adrresses.count)}" %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Contact</th>
+      <th><%= Adrress.human_attribute_name("street")%></th>
+      <th><%= Adrress.human_attribute_name("city")%></th>
+      <th><%= Adrress.human_attribute_name("state")%></th>
+      <th><%= "#{t('messages.contact')}"%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +19,10 @@
         <td><%= adrress.street %></td>
         <td><%= adrress.city %></td>
         <td><%= adrress.state %></td>
-        <td><%= adrress.contact %></td>
-        <td><%= link_to 'Show', adrress %></td>
-        <td><%= link_to 'Edit', edit_adrress_path(adrress) %></td>
-        <td><%= link_to 'Destroy', adrress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= adrress.contact.name %></td>
+        <td><%= link_to t('buttons.show'), adrress %></td>
+        <td><%= link_to t('buttons.edit'), edit_adrress_path(adrress) %></td>
+        <td><%= link_to t('buttons.destroy'), adrress, method: :delete, data: { confirm: t('messages.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Adrress', new_adrress_path %>
+<%= link_to t('buttons.new'), new_adrress_path %>
