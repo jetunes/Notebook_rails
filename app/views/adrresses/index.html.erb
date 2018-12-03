@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Adrresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adrresses.each do |adrress| %>
+      <tr>
+        <td><%= adrress.street %></td>
+        <td><%= adrress.city %></td>
+        <td><%= adrress.state %></td>
+        <td><%= adrress.contact %></td>
+        <td><%= link_to 'Show', adrress %></td>
+        <td><%= link_to 'Edit', edit_adrress_path(adrress) %></td>
+        <td><%= link_to 'Destroy', adrress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adrress', new_adrress_path %>
