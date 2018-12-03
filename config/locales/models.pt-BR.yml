@@ -4,9 +4,15 @@
       contact:
         one: Contato
         other: Contatos
+      kind:
+        one: Tipo
+        other: Tipos
       adrress:
         one: Endereço
         other: Endereços
+      phone:
+        one: Telefone
+        other: Telefones
     attributes:
       contact:
         name: "Nome"
@@ -20,3 +26,5 @@
         state: "Estado"
         contact_id: "Contato"
         contact: "Contato"
+      phone:
+        phone: "Telefone"

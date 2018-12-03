@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <h1>Contacts</h1>
+ <h1><%= "#{t('messages.contact')}"%></h1>
 
 
   <div class="field">
@@ -40,6 +40,15 @@
     <%= adrress_fields.label :state %><br>
     <%= adrress_fields.select :state, options_for_state(@contact.adrress.state)%>
   </div>
+
+  <% end %>
+  
+  <%= f.fields_for :phones do |phones_fields| %>
+  <div class="field">
+    <%= phones_fields.label :phone %><br>
+    <%= phones_fields.text_field :phone %>
+  </div>
+
   <% end %>
 
 
@@ -50,7 +59,7 @@
   </div>
   <div class="field">
     <%= f.submit "Enviar", class: "button" %>    ---|---    
-    <%= link_to 'Back', contacts_path, class: "button-others" %>
-    <%= link_to 'Show', @contact, class: "button-others" %> 
+    <%= link_to t('buttons.back'), contacts_path, class: "button-others" %>
+    <%= link_to t('buttons.show'), @contact, class: "button-others" %> 
   </div>
 <% end %>
