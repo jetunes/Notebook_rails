@@ -4,7 +4,7 @@ class AdrressesController < ApplicationController
   # GET /adrresses
   # GET /adrresses.json
   def index
-    @adrresses = Adrress.all
+    @adrresses = Adrress.all.page(params[:page]).per(10)
   end
 
   # GET /adrresses/1

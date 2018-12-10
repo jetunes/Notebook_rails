@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.8'
 gem 'faker'
 gem 'lerolero_generator'
+gem 'cocoon'
+gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'rails-i18n', '~> 4.0' # For 4.0.x
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
